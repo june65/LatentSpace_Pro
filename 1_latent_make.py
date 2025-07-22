@@ -24,7 +24,7 @@ def encode_frame(frame_bgr):
     image_tensor = preprocess(image).unsqueeze(0).to(device)
     with torch.no_grad():
         latents = vae.encode(image_tensor).latent_dist.mean
-    return latents.squeeze(0).cpu()
+    return latents.squeeze(0).cpu()#
 
 # 4. Process video and encode each frame
 def process_video(video_path, output_base_dir="output"):
